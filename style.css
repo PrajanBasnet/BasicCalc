@@ -1,0 +1,20 @@
+button{
+	padding: 12%;
+	background-color:brown;
+	color: white;
+	text-align: center;
+}
+.container{
+	display: grid;
+	grid-template-columns:repeat(3,auto);
+	width:40%;
+	margin-left: 34%;
+	margin-top: 10%;
+}
+.view{
+	padding: 10%;
+	padding-left: 33%;
+}
+.output{
+	font-size: 40px;
+}
