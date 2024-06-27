@@ -1,14 +1,18 @@
 const buttons = document.querySelectorAll(".btn");
 const output = document.querySelector(".output");
+const myOutput = document.querySelector('.myOutput');
+
 let count = "";
+let dta ="one";
 let flag = 0;
+
 buttons.forEach((buttons) => {
   buttons.addEventListener("click", handleNumber);
 });
 
 function handleNumber() {
   let num = this.getAttribute("mydata");
-
+  
 
   count += num;
   if (count.includes("ac")) {
@@ -36,23 +40,29 @@ function result(number) {
   if (number.includes("=")) {
     let newNum = number.replace("=", "");
     if (newNum.lastIndexOf(/[\+\-/]/.test(newNum))) {
-      output.innerHTML = `${eval(newNum)}`;
+      myOutput.value = `${eval(newNum)}`;
+
       flag += 1;
       count = "";
     } else {
-      output.textContent = number;
+      myOutput.value = number;
+
     }
   } else {
-    output.textContent = number;
+    myOutput.value = number;
+
   }
 }
 
 function clear() {
     count = "";   
+    dta = "two";
+    output.innerHTML = "clear display";
+    myOutput.value = "clear display";
+
 }
 
 function backSpace() {
   count = count.slice(0, -1);
   count = count.slice(0, -1);
-
 }
